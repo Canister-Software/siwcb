@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "siwcb_backend": {
+      "declarations": {
+        "node_compatibility": true
+      },
+      "main": "src/siwcb_backend/main.mo",
+      "type": "motoko"
+    },
+    "siwcb_frontend": {
+      "dependencies": [
+        "siwcb_backend"
+      ],
+      "source": [
+        "src/siwcb_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "siwcb_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
