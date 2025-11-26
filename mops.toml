@@ -1,0 +1,4 @@
+[dependencies]
+base = "0.14.9"
+cbor = "2.0.0"
+sha2 = "0.1.4"

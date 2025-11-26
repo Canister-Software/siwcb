@@ -1,10 +1,10 @@
-import { fileURLToPath, URL } from 'url';
-import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
-import environment from 'vite-plugin-environment';
-import dotenv from 'dotenv';
+import { fileURLToPath, URL } from "url";
+import { sveltekit } from "@sveltejs/kit/vite";
+import { defineConfig } from "vite";
+import environment from "vite-plugin-environment";
+import dotenv from "dotenv";
 
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: "../../.env" });
 
 export default defineConfig({
   build: {
@@ -29,16 +29,15 @@ export default defineConfig({
     sveltekit(),
     environment("all", { prefix: "CANISTER_" }),
     environment("all", { prefix: "DFX_" }),
+    environment("all", { prefix: "PUBLIC_" }),
   ],
   resolve: {
     alias: [
       {
         find: "declarations",
-        replacement: fileURLToPath(
-          new URL("../declarations", import.meta.url)
-        ),
+        replacement: fileURLToPath(new URL("../declarations", import.meta.url)),
       },
     ],
-    dedupe: ['@dfinity/agent'],
+    dedupe: ["@dfinity/agent"],
   },
 });
